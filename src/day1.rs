@@ -22,7 +22,7 @@ fn read_day1(fname: &str) -> (Vec<i32>, Vec<i32>) {
     (left, right)
 }
 
-pub fn day1_part1(kind: &str) -> i32 {
+pub fn part1(kind: &str) -> i32 {
     let (mut left, mut right) = read_day1(&format!("data/{kind}/day1.txt"));
 
     left.sort();
@@ -37,7 +37,7 @@ pub fn day1_part1(kind: &str) -> i32 {
     return total_distance;
 }
 
-pub fn day1_part2(kind: &str, verbose: bool) -> i32 {
+pub fn part2(kind: &str, verbose: bool) -> i32 {
     let (mut left, mut right) = read_day1(&format!("data/{kind}/day1.txt"));
 
     left.sort();
@@ -81,12 +81,12 @@ mod tests {
     use super::*;
 
     #[test]
-    fn test_day1_part1() {
-        assert_eq!(day1_part1("test"), 11);
+    fn test_part1() {
+        assert_eq!(part1("test"), 11);
     }
 
     #[test]
-    fn test_day1_part2() {
-        assert_eq!(day1_part2("test", false), 31);
+    fn test_part2() {
+        assert_eq!(part2("test", false), 31);
     }
 }
