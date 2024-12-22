@@ -2,6 +2,8 @@ mod day1;
 mod day2;
 mod day3;
 mod day4;
+mod day5;
+mod day6;
 
 fn main() {
     use std::time::Instant;
@@ -19,6 +21,14 @@ fn main() {
     println!("Elapsed: {:.2?} seconds", elapsed);
     let now = Instant::now();
     println!("Day 4: {}, {}", day4::part1("real"), day4::part2("real"));
+    let elapsed = now.elapsed();
+    println!("Elapsed: {:.2?} seconds", elapsed);
+    let now = Instant::now();
+    println!("Day 5: {}, {}", day5::part1("real"), day5::part2("real", false));
+    let elapsed = now.elapsed();
+    println!("Elapsed: {:.2?} seconds", elapsed);
+    let now = Instant::now();
+    println!("Day 6: {}, {}", day6::part1("real"), day6::part2("real", false));
     let elapsed = now.elapsed();
     println!("Elapsed: {:.2?} seconds", elapsed);
 
