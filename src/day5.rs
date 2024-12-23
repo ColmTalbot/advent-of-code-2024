@@ -41,7 +41,6 @@ fn sort_message(message: &Vec<usize>, rule_map: &HashMap<usize, HashSet<usize>>)
             if !rule_map.contains_key(&sorted[idx - 1]) {
                 sorted.swap(idx - 1, len - 1);
                 if !rule_map.contains_key(&sorted[idx - 1]) {
-                    println!("Cannot sort {:?}, two characters missing from map", message);
                     return None;
                 }
             }
@@ -75,7 +74,10 @@ pub fn part2(kind: &str, verbose: bool) -> usize {
         if message_is_sorted(&message, &rule_map) {
             continue;
         }
-        let sorted = sort_message(&message, &rule_map).unwrap();
+        let sorted = match sort_message(&message, &rule_map) {
+            Some(answer) => answer,
+            None => panic!("Unable to sort {:?}", message)
+        };
         if verbose {
             println!("{} {:?} {:?}", sorted[sorted.len() / 2], message, sorted);
         }
