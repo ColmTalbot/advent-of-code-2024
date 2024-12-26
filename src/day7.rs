@@ -92,7 +92,6 @@ pub fn part2(kind: &str) -> i64 {
     let mut total: i64 = 0;
     for (&result, value) in results.iter().zip(values.iter()) {
         if test_values_2(result, value) {
-            println!("{}", result);
             total += result;
         }
     }
